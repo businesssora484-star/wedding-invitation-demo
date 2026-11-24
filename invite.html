@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumit &amp; Nidhi — Shubh Vivaah | 8 January 2027, Betul</title>
+<meta name="description" content="Sumit & Nidhi invite you to their wedding on Friday, 8 January 2027 in Betul, Madhya Pradesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Pinyon+Script&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fbf4ea;--maroon:#6e1f2f;--wine:#6e1f2f;--wine-deep:#471220;--gold:#b8913f;--gold-light:#e6cc8e;--ink:#3d2b2c;--card:#fffaf2;--line:rgba(184,145,63,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:Montserrat,system-ui,sans-serif;font-size:15px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--maroon)}
+h1,h2,h3{font-family:"Playfair Display",serif;color:var(--maroon);line-height:1.15}
+.script{font-family:"Pinyon Script",cursive;font-weight:400}
+.hindi{font-family:"Noto Serif Devanagari",serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+section{padding:52px 0}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:12px;font-weight:700;color:var(--gold);text-align:center}
+.sec-title{font-size:32px;text-align:center;margin:8px 0 6px}
+.sec-sub{text-align:center;color:#6b5556;font-size:14px;max-width:520px;margin:0 auto 26px}
+.gold-rule{width:90px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:14px auto;border:0}
+/* INTRO */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(ellipse at center,#7d2739 0%,var(--wine-deep) 70%);display:flex;align-items:center;justify-content:center;padding:20px;perspective:1200px;transition:opacity .8s ease,visibility .8s}
+#intro.opened{opacity:0;visibility:hidden;pointer-events:none}
+.envelope{width:min(92vw,420px);aspect-ratio:3/4.1;background:linear-gradient(160deg,#7a2436,var(--wine-deep));border:2px solid var(--gold);outline:1px solid rgba(230,204,142,.5);outline-offset:6px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px 24px;color:var(--gold-light);cursor:pointer;box-shadow:0 30px 80px rgba(0,0,0,.5);transform-origin:left center;transition:transform 1s cubic-bezier(.6,0,.2,1),opacity .8s}
+#intro.opening .envelope{transform:rotateY(-78deg) translateX(-30px);opacity:.25}
+.medal{width:78px;height:78px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:34px;color:var(--gold-light);background:rgba(184,145,63,.14);font-family:"Noto Serif Devanagari",serif;margin-bottom:16px}
+.envelope .hindi{font-size:15px;letter-spacing:.12em;color:var(--gold-light)}
+.envelope h2{color:#fff;font-size:30px;margin:8px 0 2px}
+.monogram{font-family:"Pinyon Script",cursive;font-size:64px;color:var(--gold-light);line-height:1;margin:14px 0 6px}
+.envelope p{font-size:14px;color:#f3e3c2}
+.tap{margin-top:22px;background:var(--gold);color:#fff;border:0;padding:12px 22px;border-radius:999px;font:600 14px Montserrat,sans-serif;cursor:pointer}
+.skip-intro{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#fff!important;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.5);padding:10px 18px;border-radius:999px;font-size:14px;text-decoration:none;white-space:nowrap}
+/* TOP BAR / MUSIC */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(251,244,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:10px 16px}
+.topbar .mono{font-family:"Pinyon Script",cursive;font-size:28px;color:var(--maroon)}
+#musicBtn{background:var(--maroon);color:#fff;border:0;border-radius:999px;padding:9px 16px;font:600 13px Montserrat,sans-serif;cursor:pointer}
+/* HERO */
+.hero{text-align:center;padding:44px 0 10px}
+.greeting{background:linear-gradient(135deg,var(--wine-deep),var(--maroon));color:#fff;border-radius:16px;padding:22px 18px;margin:0 0 28px;border:1px solid var(--gold)}
+.greeting .big{font-family:"Playfair Display",serif;font-size:28px;color:var(--gold-light);line-height:1.25}
+.greeting p{font-size:14px;color:#f7ead0;margin-top:6px}
+.arch{width:min(78vw,340px);margin:0 auto;border-radius:170px 170px 14px 14px;overflow:hidden;border:4px solid var(--gold);box-shadow:0 18px 40px rgba(71,18,32,.25)}
+.arch img{width:100%;height:420px;object-fit:cover}
+.names{font-size:22px;margin-top:26px}
+.name-line{font-family:"Pinyon Script",cursive;font-size:clamp(52px,13vw,84px);color:var(--maroon);line-height:1.15;min-height:1.2em}
+.name-line .amp{color:var(--gold);font-size:.7em}
+.name-line span{display:inline-block;opacity:0;transform:translateY(14px) rotate(3deg);animation:letterIn .5s forwards}
+@keyframes letterIn{to{opacity:1;transform:none}}
+.families{font-size:14px;color:#6b5556;margin-top:10px}
+.invite-line{font-size:15px;max-width:520px;margin:14px auto 0}
+.date-pill{display:inline-block;margin-top:18px;background:#fff;border:1px solid var(--gold);color:var(--maroon);font-weight:700;padding:10px 18px;border-radius:999px;font-size:14px}
+.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:12px 20px;font-weight:700;font-size:14px;border:1px solid var(--gold);cursor:pointer}
+.btn-gold{background:var(--gold);color:#fff!important}
+.btn-outline{background:#fff;color:var(--maroon)!important}
+.btn-maroon{background:var(--maroon);color:#fff!important;border-color:var(--maroon)}
+/* COUNTDOWN */
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:560px;margin:22px auto 0}
+.cd{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 6px;text-align:center;box-shadow:0 8px 24px rgba(71,18,32,.07)}
+.cd b{font-family:"Playfair Display",serif;font-size:30px;color:var(--maroon);display:block;line-height:1}
+.cd span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+/* EVENTS */
+.event{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:0 0 16px;box-shadow:0 10px 28px rgba(71,18,32,.06)}
+.event h3{font-size:24px}
+.event .when{color:var(--gold);font-weight:700;font-size:14px;margin:4px 0}
+.event p{font-size:14px;margin:3px 0}
+.event .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.event .btn{padding:10px 16px}
+/* CAROUSEL */
+.carousel{position:relative;max-width:560px;margin:0 auto;border-radius:18px;overflow:hidden;border:3px solid var(--gold);background:#000}
+.carousel img{width:100%;height:420px;object-fit:cover}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(71,18,32,.75);color:#fff;border:0;width:42px;height:42px;border-radius:50%;font-size:20px;cursor:pointer}
+#prevBtn{left:10px}#nextBtn{right:10px}
+.dots{text-align:center;margin-top:12px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;background:#d8c49a;margin:0 4px;cursor:pointer;padding:0}
+.dots button.active{background:var(--maroon)}
+#carCaption{text-align:center;font-size:14px;color:#6b5556;margin-top:8px}
+/* FORM */
+form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 28px rgba(71,18,32,.06)}
+label{font-weight:600;font-size:14px;display:block;margin:16px 0 6px}
+label:first-child{margin-top:0}
+input[type=text],input[type=number],textarea,select{width:100%;padding:12px;border:1px solid #d9c8a8;border-radius:10px;font:400 15px Montserrat,sans-serif;background:#fffdf8;color:var(--ink)}
+fieldset{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:16px}
+legend{font-weight:700;font-size:14px;color:var(--maroon);padding:0 6px}
+.radio-row,.check-row{display:flex;flex-wrap:wrap;gap:8px}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0}
+.pill span{display:inline-block;padding:9px 14px;border:1px solid var(--gold);border-radius:999px;font-size:14px;cursor:pointer;background:#fff}
+.pill input:checked+span{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.pill input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.submit{width:100%;margin-top:20px;background:var(--maroon);color:#fff;border:0;padding:15px;border-radius:999px;font:700 15px Montserrat,sans-serif;cursor:pointer}
+#thanks{display:none;background:#eef7e8;border:1px solid #9dbb7a;color:#33501e;border-radius:14px;padding:18px;text-align:center;font-size:15px;margin-top:16px}
+.petal{position:fixed;top:-20px;z-index:200;pointer-events:none;font-size:18px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(320deg);opacity:.2}}
+.closing{text-align:center}
+.closing .script{font-size:52px;color:var(--maroon)}
+footer{background:var(--wine-deep);color:#f3e3c2;text-align:center;padding:30px 18px;font-size:14px}
+footer a{color:var(--gold-light)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(min-width:640px){.sec-title{font-size:38px}.arch img{height:480px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.name-line span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- 1. CINEMATIC OPENING -->
+<div id="intro" role="dialog" aria-label="Wedding invitation opening">
+  <div class="envelope" id="envelope" tabindex="0" role="button" aria-label="Tap to open invitation">
+    <div class="medal" aria-hidden="true">ॐ</div>
+    <div class="hindi">॥ शुभ विवाह ॥</div>
+    <h2>Shubh Vivaah</h2>
+    <div class="monogram" aria-hidden="true">S &amp; N</div>
+    <p>Sumit &amp; Nidhi<br>Friday, 8 January 2027 • Betul, Madhya Pradesh</p>
+    <button class="tap" type="button">Tap to Open ✦</button>
+  </div>
+  <a class="skip-intro" href="#details" id="skipIntro">Seedha details dekhein →</a>
+</div>
+
+<div class="topbar">
+  <span class="mono">S &amp; N</span>
+  <button id="musicBtn" type="button" aria-pressed="false">🎵 Music: OFF</button>
+</div>
+
+<main id="details">
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div class="greeting" id="greetingBox">
+      <div class="big" id="greetingText">Namaste</div>
+      <p id="greetingSub">Aapka swagat hai — aapko is shubh avsar par saadar aamantrit karte hain.</p>
+    </div>
+    <p class="eyebrow">With the blessings of our families</p>
+    <div class="arch"><img src="assets/photo-2.jpg" alt="Sumit and Nidhi together" loading="eager"></div>
+    <p class="names hindi">॥ श्री गणेशाय नमः ॥</p>
+    <div class="name-line" id="nameLine" aria-label="Sumit and Nidhi"></div>
+    <p class="families"><strong>Sumit</strong> — son of Mr. Sitaram Yadav &amp; Family<br><strong>Nidhi</strong> — daughter of Mr. Anandrao Rajput &amp; Family</p>
+    <p class="invite-line">Dono parivaaron ke aashirvaad ke saath, hum aapko apne vivaah samaroh mein saadar aamantrit karte hain. Aapki upasthiti hi hamara sabse bada uphaar hogi.</p>
+    <span class="date-pill">Friday, 8 January 2027 • Pheras 8:10 PM • Betul, MP</span>
+  </div>
+
+  <!-- SAVE THE DATE + COUNTDOWN -->
+  <section class="wrap reveal" id="save">
+    <p class="eyebrow">Save the Date</p>
+    <h2 class="sec-title">The Countdown Begins</h2>
+    <hr class="gold-rule">
+    <p class="sec-sub">Friday, 8 January 2027 — Kalapatha Road, Betul, Madhya Pradesh. Pheras at 8:10 PM.</p>
+    <div class="countdown" role="timer" aria-label="Countdown to wedding">
+      <div class="cd"><b id="cd-d">—</b><span>Days</span></div>
+      <div class="cd"><b id="cd-h">—</b><span>Hours</span></div>
+      <div class="cd"><b id="cd-m">—</b><span>Minutes</span></div>
+      <div class="cd"><b id="cd-s">—</b><span>Seconds</span></div>
+    </div>
+    <p style="text-align:center;margin-top:20px"><a class="btn btn-gold" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sumit+%26+Nidhi+Wedding+-+Baraat+%26+Pheras&dates=20270108T143000Z/20270108T173000Z&details=Pheras+8%3A10+PM.+Sumit+%26+Nidhi+wedding.&location=New+Shivaji+Nagar%2C+Betul+MP+460001">Add Wedding to Calendar</a>
+    <a class="btn btn-outline" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Tx2RuU5SDrPybGWg6" style="margin-left:8px">📍 Main Venue Directions</a></p>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="wrap reveal" id="events">
+    <p class="eyebrow">Wedding Celebrations</p>
+    <h2 class="sec-title">Events &amp; Functions</h2>
+    <hr class="gold-rule">
+    <div id="eventList"></div>
+  </section>
+
+  <!-- OUR STORY CAROUSEL -->
+  <section class="wrap reveal" id="story">
+    <p class="eyebrow">Our Story</p>
+    <h2 class="sec-title">Moments Together</h2>
+    <hr class="gold-rule">
+    <p class="sec-sub">Kuch khaas pal — hamari kahani, tasveeron mein.</p>
+    <div class="carousel">
+      <img id="carImg" src="assets/photo-1.jpg" alt="Sumit and Nidhi — photo 1">
+      <button class="car-btn" id="prevBtn" type="button" aria-label="Previous photo">‹</button>
+      <button class="car-btn" id="nextBtn" type="button" aria-label="Next photo">›</button>
+    </div>
+    <p id="carCaption">Photo 1 of 5</p>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="wrap reveal" id="rsvp">
+    <p class="eyebrow">RSVP</p>
+    <h2 class="sec-title">Kripya Jawab Dein</h2>
+    <hr class="gold-rule">
+    <p class="sec-sub">Please let us know if you can join us — isse humein taiyaari mein madad milegi.</p>
+    <form id="rsvpForm" novalidate>
+      <label for="f-name">Aapka Naam *</label>
+      <input type="text" id="f-name" required placeholder="e.g. Sharma Parivar" autocomplete="name">
+      <fieldset>
+        <legend>Aayenge? *</legend>
+        <div class="radio-row">
+          <label class="pill"><input type="radio" name="attending" value="yes" checked><span>Haan, aayenge</span></label>
+          <label class="pill"><input type="radio" name="attending" value="no"><span>Nahi</span></label>
+          <label class="pill"><input type="radio" name="attending" value="maybe"><span>Pakka nahi</span></label>
+        </div>
+      </fieldset>
+      <label for="f-count">Kitne log?</label>
+      <input type="number" id="f-count" min="0" max="50" value="2">
+      <fieldset>
+        <legend>Kaun se functions?</legend>
+        <div class="check-row" id="eventChecks"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Khana</legend>
+        <div class="radio-row">
+          <label class="pill"><input type="radio" name="food" value="veg" checked><span>Veg</span></label>
+          <label class="pill"><input type="radio" name="food" value="nonveg"><span>Non-veg</span></label>
+          <label class="pill"><input type="radio" name="food" value="jain"><span>Jain</span></label>
+        </div>
+      </fieldset>
+      <label for="f-note">Chhota note (optional)</label>
+      <textarea id="f-note" rows="3" placeholder="Koi khaas baat, gaana request, ya shubhkamnayein..."></textarea>
+      <button class="submit" type="submit">RSVP Bhejein ✦</button>
+      <div id="thanks" role="status"></div>
+    </form>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="wrap closing reveal">
+    <h2 class="sec-title">We can't wait to celebrate with you</h2>
+    <hr class="gold-rule">
+    <p class="sec-sub">Aapke aashirvaad aur upasthiti ke saath ye din aur bhi khaas banega.</p>
+    <div class="script">Sumit &amp; Nidhi</div>
+    <p style="font-size:14px;margin-top:10px">With love &amp; gratitude,<br><strong>Mr. Sitaram Yadav &amp; Family</strong> • <strong>Mr. Anandrao Rajput &amp; Family</strong><br>Betul, Madhya Pradesh</p>
+  </section>
+</main>
+
+<footer>
+  <p>Sumit &amp; Nidhi • 8 January 2027 • Betul, Madhya Pradesh</p>
+  <p style="margin-top:8px"><a href="dashboard.html">Host Dashboard (Demo)</a></p>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var MAPS="https://maps.app.goo.gl/Tx2RuU5SDrPybGWg6";
+var EVENTS=[
+ {id:"haldi",name:"Haldi",when:"Wednesday, 6 January 2027 • 8:00 AM",venue:"Kothi Bazar, Betul",dress:"Yellow pehnein",cal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sumit+%26+Nidhi+-+Haldi&dates=20270106T023000Z/20270106T043000Z&details=Haldi+ceremony.+Dress%3A+Yellow&location=Kothi+Bazar%2C+Betul"},
+ {id:"mehendi",name:"Mehendi",when:"Wednesday, 6 January 2027 • 7:00 PM",venue:"Kothi Bazar, Betul",dress:"Green",cal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sumit+%26+Nidhi+-+Mehendi&dates=20270106T133000Z/20270106T153000Z&details=Mehendi+ceremony.+Dress%3A+Green&location=Kothi+Bazar%2C+Betul"},
+ {id:"sangeet",name:"Sangeet",when:"Thursday, 7 January 2027 • 10:00 PM",venue:"Kothi Bazar, Betul",dress:"Purple & Pink, Indo-western",cal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sumit+%26+Nidhi+-+Sangeet&dates=20270107T163000Z/20270107T183000Z&details=Sangeet+night.+Dress%3A+Purple+%26+Pink%2C+Indo-western&location=Kothi+Bazar%2C+Betul"},
+ {id:"pheras",name:"Baraat & Pheras",when:"Friday, 8 January 2027 • 8:00 PM (Pheras 8:10 PM)",venue:"New Shivaji Nagar, Betul MP 460001",dress:"Red & Gold",cal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sumit+%26+Nidhi+-+Baraat+%26+Pheras&dates=20270108T143000Z/20270108T173000Z&details=Baraat+%26+Pheras+(8%3A10+PM).+Dress%3A+Red+%26+Gold&location=New+Shivaji+Nagar%2C+Betul+MP+460001"},
+ {id:"reception",name:"Grand Reception",when:"Sunday, 10 January 2027 • 8:00 PM",venue:"Party Lawn, Betul",dress:"Formal & Ethnic",cal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sumit+%26+Nidhi+-+Grand+Reception&dates=20270110T143000Z/20270110T173000Z&details=Grand+Reception.+Dress%3A+Formal+%26+Ethnic&location=Party+Lawn%2C+Betul"}
+];
+var guest=(new URLSearchParams(location.search).get("g")||"").trim();
+/* Greeting + prefill */
+if(guest){
+ document.getElementById("greetingText").textContent="Namaste, "+guest;
+ document.getElementById("greetingSub").textContent="Aapka swagat hai, "+guest+" — aapko is shubh avsar par saadar aamantrit karte hain.";
+ document.getElementById("f-name").value=guest;
+}
+/* Event cards + checkboxes */
+var list=document.getElementById("eventList"),checks=document.getElementById("eventChecks");
+EVENTS.forEach(function(ev){
+ var d=document.createElement("article");d.className="event";
+ d.innerHTML="<h3></h3><p class='when'></p><p class='venue'></p><p class='dress'></p><div class='actions'><a class='btn btn-maroon' target='_blank' rel='noopener'>📍 Directions</a><a class='btn btn-outline' target='_blank' rel='noopener'>📅 Add to Calendar</a></div>";
+ d.querySelector("h3").textContent=ev.name;
+ d.querySelector(".when").textContent=ev.when;
+ d.querySelector(".venue").textContent="📍 "+ev.venue;
+ d.querySelector(".dress").textContent="👗 Dress: "+ev.dress;
+ var a=d.querySelectorAll("a");a[0].href=MAPS;a[1].href=ev.cal;
+ list.appendChild(d);
+ var lab=document.createElement("label");lab.className="pill";
+ lab.innerHTML="<input type='checkbox' value='"+ev.id+"' checked><span></span>";
+ lab.querySelector("span").textContent=ev.name;checks.appendChild(lab);
+});
+/* Intro open */
+var intro=document.getElementById("intro"),opened=false;
+function openIntro(){if(opened)return;opened=true;intro.classList.add("opening");setTimeout(function(){intro.classList.add("opened");document.getElementById("details").scrollIntoView();animateNames();},450);}
+document.getElementById("envelope").addEventListener("click",openIntro);
+document.getElementById("envelope").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openIntro();}});
+document.getElementById("skipIntro").addEventListener("click",function(e){e.preventDefault();opened=true;intro.classList.add("opened");animateNames();document.getElementById("details").scrollIntoView({behavior:"smooth"});});
+/* Letter-by-letter names */
+var nameDone=false;
+function animateNames(){if(nameDone)return;nameDone=true;var el=document.getElementById("nameLine");var text="Sumit & Nidhi";el.innerHTML="";text.split("").forEach(function(ch,i){var s=document.createElement("span");s.textContent=ch===" "?"\u00A0":ch;if(ch==="&")s.className="amp";s.style.animationDelay=(i*55)+"ms";el.appendChild(s);});}
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){/* still allow skip */ }
+/* Countdown */
+var target=new Date("2027-01-08T20:10:00+05:30").getTime();
+function tick(){var diff=Math.max(0,target-Date.now());var d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;var set=function(id,v){document.getElementById(id).textContent=String(v).padStart(2,"0");};set("cd-d",d);set("cd-h",h);set("cd-m",m);set("cd-s",s);}
+tick();setInterval(tick,1000);
+/* Carousel */
+var photos=[1,2,3,4,5],idx=0,img=document.getElementById("carImg"),cap=document.getElementById("carCaption"),dots=document.getElementById("dots");
+photos.forEach(function(_,i){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Photo "+(i+1));b.addEventListener("click",function(){show(i);});dots.appendChild(b);});
+function show(i){idx=(i+photos.length)%photos.length;img.src="assets/photo-"+photos[idx]+".jpg";img.alt="Sumit and Nidhi — photo "+photos[idx];cap.textContent="Photo "+(idx+1)+" of 5";Array.prototype.forEach.call(dots.children,function(b,j){b.classList.toggle("active",j===idx);});}
+document.getElementById("prevBtn").addEventListener("click",function(){show(idx-1);});
+document.getElementById("nextBtn").addEventListener("click",function(){show(idx+1);});
+show(0);setInterval(function(){if(!document.hidden)show(idx+1);},5000);
+/* Reveal on scroll */
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.08});document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});}
+/* Petals / confetti */
+function petals(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;var icons=["🌸","✿","❀","✦"];for(var i=0;i<28;i++){var p=document.createElement("span");p.className="petal";p.textContent=icons[i%icons.length];p.style.left=(Math.random()*100)+"vw";p.style.color=i%2?"#b8913f":"#c96a7d";p.style.animationDuration=(2.2+Math.random()*2)+"s";p.style.animationDelay=(Math.random()*.6)+"s";document.body.appendChild(p);(function(el){setTimeout(function(){el.remove();},5200);})(p);}}
+/* RSVP */
+document.getElementById("rsvpForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ var name=document.getElementById("f-name").value.trim();
+ if(!name){alert("Kripya apna naam likhein.");document.getElementById("f-name").focus();return;}
+ var attending=(document.querySelector("input[name=attending]:checked")||{}).value||"yes";
+ var food=(document.querySelector("input[name=food]:checked")||{}).value||"veg";
+ var evs=Array.prototype.map.call(checks.querySelectorAll("input:checked"),function(c){return c.value;});
+ var obj={name:name,attending:attending,count:Number(document.getElementById("f-count").value||0),events:evs,food:food,note:document.getElementById("f-note").value.trim(),ts:Date.now(),guest:guest||""};
+ var arr=[];try{arr=JSON.parse(localStorage.getItem("sn_rsvps_v1")||"[]");if(!Array.isArray(arr))arr=[];}catch(_){arr=[];}
+ arr.push(obj);localStorage.setItem("sn_rsvps_v1",JSON.stringify(arr));
+ var th=document.getElementById("thanks");th.style.display="block";
+ th.textContent="🙏 Dhanyavaad, "+name+"! Aapka RSVP mil gaya hai. Hum aapka intezaar karenge — Sumit & Nidhi parivaar.";
+ th.scrollIntoView({behavior:"smooth",block:"center"});petals();
+});
+/* Music — WebAudio tanpura/shehnai-like loop, default OFF */
+var actx=null,nodes=[],playing=false,mTimer=null;
+function startMusic(){
+ try{
+  actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+  if(actx.state==="suspended")actx.resume();
+  var master=actx.createGain();master.gain.value=.12;master.connect(actx.destination);nodes.push(master);
+  // Tanpura drone: Sa + Pa
+  [130.81,196.00,261.63].forEach(function(f,i){var o=actx.createOscillator(),g=actx.createGain();o.type="sine";o.frequency.value=f;g.gain.value=i===0?.5:.22;o.connect(g);g.connect(master);o.start();nodes.push(o);});
+  // Shehnai-like slow melody
+  var scale=[261.63,293.66,329.63,392.00,440.00,392.00,329.63,293.66];var step=0;
+  function note(){if(!playing)return;var o=actx.createOscillator(),g=actx.createGain(),fl=actx.createBiquadFilter();o.type="sawtooth";o.frequency.value=scale[step%scale.length];fl.type="lowpass";fl.frequency.value=1100;g.gain.setValueAtTime(0,actx.currentTime);g.gain.linearRampToValueAtTime(.16,actx.currentTime+.12);g.gain.linearRampToValueAtTime(.02,actx.currentTime+1.1);o.connect(fl);fl.connect(g);g.connect(master);o.start();o.stop(actx.currentTime+1.2);step++;mTimer=setTimeout(note,1150);}
+  note();
+ }catch(_){}
+}
+function stopMusic(){nodes.forEach(function(n){try{if(n.stop)n.stop();}catch(_){}try{n.disconnect();}catch(_){}});nodes=[];if(mTimer)clearTimeout(mTimer);}
+var mb=document.getElementById("musicBtn");
+mb.addEventListener("click",function(){playing=!playing;mb.textContent=playing?"🔊 Music: ON":"🎵 Music: OFF";mb.setAttribute("aria-pressed",String(playing));if(playing)startMusic();else stopMusic();});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Host Dashboard — Sumit &amp; Nidhi Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#fbf4ea; --maroon:#6e1f2f; --wine:#471220; --gold:#b8913f; --gold-light:#e6cc8e;
+    --ink:#3d2b2c; --card:#fffdf8; --line:#ead9bd; --muted:#7a6560;
+    --green:#2e7d4f; --green-bg:#e6f4ea; --red:#a52a3a; --red-bg:#fbe9eb; --amber:#8a6414; --amber-bg:#fdf3d7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Montserrat',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px 48px}
+  /* Note band */
+  .note-band{background:var(--wine);color:#f7e8c9;text-align:center;font-size:.82rem;font-weight:600;letter-spacing:.02em;padding:10px 16px}
+  /* Header */
+  header{text-align:center;padding:34px 16px 8px}
+  header .kicker{font-size:.72rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  header h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,6vw,3rem);font-weight:700;color:var(--maroon);margin:8px 0 4px}
+  header h1 .amp{color:var(--gold)}
+  header p{color:var(--muted);font-size:.92rem}
+  .rule{display:flex;align-items:center;gap:12px;max-width:340px;margin:16px auto 4px}
+  .rule::before,.rule::after{content:"";flex:1;height:1px;background:var(--gold-light)}
+  .rule span{color:var(--gold);font-size:.9rem}
+  h2.section{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--wine);margin:30px 0 14px;display:flex;align-items:center;gap:10px}
+  h2.section::after{content:"";flex:1;height:1px;background:var(--line)}
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+  @media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:0 4px 14px rgba(71,18,32,.06)}
+  .stat .num{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;color:var(--maroon);line-height:1.1}
+  .stat .lbl{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:4px}
+  .stat .sub{font-size:.75rem;color:var(--muted);margin-top:2px}
+  .stat.green{border-top-color:var(--green)} .stat.green .num{color:var(--green)}
+  .stat.amber{border-top-color:var(--gold)} .stat.amber .num{color:var(--amber)}
+  .stat.red{border-top-color:var(--red)} .stat.red .num{color:var(--red)}
+  /* Function + food cards */
+  .grid2{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+  .fn-list{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:560px){.fn-list{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:900px){.fn-list{grid-template-columns:repeat(5,1fr)}}
+  .fn{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center;box-shadow:0 4px 14px rgba(71,18,32,.05)}
+  .fn .fname{font-family:'Playfair Display',serif;font-weight:700;color:var(--maroon);font-size:1rem}
+  .fn .fwhen{font-size:.72rem;color:var(--muted);font-weight:600;margin:2px 0 8px}
+  .fn .fnum{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--wine);line-height:1}
+  .fn .flbl{font-size:.72rem;color:var(--muted)}
+  .bar{height:8px;background:#f1e4cb;border-radius:99px;margin-top:10px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:99px}
+  .food{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .food .fitem{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 10px;text-align:center;box-shadow:0 4px 14px rgba(71,18,32,.05)}
+  .food .fnum{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--maroon);line-height:1}
+  .food .flbl{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:4px}
+  .food .fsub{font-size:.72rem;color:var(--muted)}
+  /* Toolbar */
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+  .toolbar input[type="search"]{flex:1 1 220px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:.9rem;background:#fff;color:var(--ink)}
+  .toolbar input[type="search"]:focus{outline:2px solid var(--gold-light);border-color:var(--gold)}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:.85rem;border-radius:10px;padding:11px 16px;transition:opacity .15s}
+  .btn:hover{opacity:.88}
+  .btn-gold{background:var(--maroon);color:#fff}
+  .btn-outline{background:transparent;color:var(--red);border:1.5px solid var(--red)}
+  .btn-outline:hover{background:var(--red-bg);opacity:1}
+  /* Table */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 14px rgba(71,18,32,.05)}
+  table{width:100%;border-collapse:collapse;min-width:760px;font-size:.86rem}
+  thead th{background:var(--wine);color:#f7e8c9;text-align:left;padding:12px 14px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  tbody td{padding:11px 14px;border-top:1px solid #f3e7d2;vertical-align:top}
+  tbody tr:nth-child(even){background:#fdf8ef}
+  .gname{font-weight:700;color:var(--wine);white-space:nowrap}
+  .badge{display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:99px;margin-left:6px;vertical-align:middle}
+  .badge-sample{background:var(--amber-bg);color:var(--amber);border:1px solid var(--gold-light)}
+  .badge-live{background:var(--green-bg);color:var(--green);border:1px solid #bfe3cd}
+  .pill{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap}
+  .pill-yes{background:var(--green-bg);color:var(--green)}
+  .pill-no{background:var(--red-bg);color:var(--red)}
+  .pill-maybe{background:var(--amber-bg);color:var(--amber)}
+  .fn-tags{font-size:.78rem;color:var(--ink)}
+  .note-cell{max-width:220px;color:var(--muted);font-size:.8rem}
+  .empty-msg{text-align:center;padding:28px 16px;color:var(--muted);font-size:.9rem}
+  /* Footer */
+  footer{margin-top:36px;text-align:center;border-top:1px solid var(--line);padding-top:22px}
+  footer a{color:var(--maroon);font-weight:700;text-decoration:none;margin:0 10px;font-size:.9rem}
+  footer a:hover{color:var(--gold);text-decoration:underline}
+  footer .fnote{color:var(--muted);font-size:.78rem;margin-top:10px}
+  .toast{display:none;background:var(--green-bg);color:var(--green);border:1px solid #bfe3cd;border-radius:10px;padding:10px 14px;font-size:.85rem;font-weight:600;margin-bottom:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="note-band">Demo dashboard — asal shaadi mein ye data surakshit server par rehta hai.</div>
+
+<header>
+  <div class="kicker">Host Dashboard</div>
+  <h1>Sumit <span class="amp">&amp;</span> Nidhi</h1>
+  <p>RSVP ki poori jankari ek jagah — kaun aa raha hai, kitne log, kis function mein, aur khana kya lagega.</p>
+  <div class="rule"><span>◆</span></div>
+</header>
+
+<div class="wrap">
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="num" id="stTotal">0</div>
+      <div class="lbl">Kul Jawab</div>
+      <div class="sub">Total responses</div>
+    </div>
+    <div class="stat green">
+      <div class="num" id="stComing">0</div>
+      <div class="lbl">Kul Aane Wale Log</div>
+      <div class="sub">Attending — guests</div>
+    </div>
+    <div class="stat amber">
+      <div class="num" id="stMaybe">0</div>
+      <div class="lbl">Pakka Nahi (Maybe)</div>
+      <div class="sub" id="stMaybeSub">0 jawab</div>
+    </div>
+    <div class="stat red">
+      <div class="num" id="stNo">0</div>
+      <div class="lbl">Nahi Aane Wale</div>
+      <div class="sub">Jawab “No” wale</div>
+    </div>
+  </div>
+
+  <!-- Function-wise -->
+  <h2 class="section">Function-wise Ginti</h2>
+  <div class="fn-list" id="fnList"></div>
+  <p style="font-size:.76rem;color:var(--muted);margin-top:8px">Sirf “Aayenge” wale guests ke log gine gaye hain, unke chune hue functions ke hisaab se.</p>
+
+  <!-- Food -->
+  <h2 class="section">Khana — Kitne Logon Ke Liye</h2>
+  <div class="food">
+    <div class="fitem"><div class="fnum" id="foodVeg">0</div><div class="flbl">Veg</div><div class="fsub">log</div></div>
+    <div class="fitem"><div class="fnum" id="foodNonveg">0</div><div class="flbl">Non-Veg</div><div class="fsub">log</div></div>
+    <div class="fitem"><div class="fnum" id="foodJain">0</div><div class="flbl">Jain</div><div class="fsub">log</div></div>
+  </div>
+  <p style="font-size:.76rem;color:var(--muted);margin-top:8px">Khane ki ginti bhi sirf aane wale (Yes) guests ke count se hai, taaki caterer ko sahi number mile.</p>
+
+  <!-- Guest list -->
+  <h2 class="section">Guest List</h2>
+  <div class="toast" id="toast"></div>
+  <div class="toolbar">
+    <input type="search" id="searchBox" placeholder="Naam se khojein… (e.g. Sharma)" aria-label="Naam se khojein">
+    <button class="btn btn-gold" id="csvBtn" type="button">⬇ CSV Export</button>
+    <button class="btn btn-outline" id="clearBtn" type="button">Sirf mere test RSVP saaf karo</button>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Naam</th><th>Status</th><th>Log</th><th>Functions</th><th>Khana</th><th>Note</th><th>Samay</th>
+        </tr>
+      </thead>
+      <tbody id="guestBody"></tbody>
+    </table>
+    <div class="empty-msg" id="emptyMsg" style="display:none">Is naam ka koi guest nahi mila.</div>
+  </div>
+
+  <footer>
+    <a href="invite.html">← Invitation dekhein</a>
+    <a href="index.html">Sales Page</a>
+    <div class="fnote">Sumit &amp; Nidhi • 6–10 January 2027 • Betul</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var LS_KEY = "sn_rsvps_v1";
+
+  var EVENTS = {
+    haldi:    { name:"Haldi",            short:"Haldi",    when:"6 Jan, 8 AM"  },
+    mehendi:  { name:"Mehendi",          short:"Mehendi",  when:"6 Jan, 7 PM"  },
+    sangeet:  { name:"Sangeet",          short:"Sangeet",  when:"7 Jan, 10 PM" },
+    pheras:   { name:"Baraat & Pheras",  short:"Pheras",   when:"8 Jan, 8 PM"  },
+    reception:{ name:"Reception",        short:"Reception",when:"10 Jan, 8 PM" }
+  };
+  var EVENT_ORDER = ["haldi","mehendi","sangeet","pheras","reception"];
+
+  /* ---------- Seed data (demo sample RSVPs) ---------- */
+  var SEED = [
+    { name:"Sharma Parivar", attending:"yes", count:5, events:["haldi","mehendi","sangeet","pheras","reception"], food:"veg",    note:"Poora parivar aayega, bacche bhi saath hain.", ts:"2026-11-18T10:24:00", guest:"Family" },
+    { name:"Verma Family", attending:"yes", count:4, events:["pheras","reception"], food:"veg",    note:"Pheras se join karenge.", ts:"2026-11-18T13:05:00", guest:"Family" },
+    { name:"Chacha Ji — Rakesh Sharma", attending:"yes", count:2, events:["haldi","mehendi","sangeet","pheras","reception"], food:"jain", note:"Jain khana alag se rakhna.", ts:"2026-11-19T09:41:00", guest:"Family" },
+    { name:"Mama Ji — Sunil Verma", attending:"yes", count:3, events:["haldi","mehendi","pheras","reception"], food:"veg",    note:"Sangeet wale din kaam hai, baaki sab mein aayenge.", ts:"2026-11-19T18:12:00", guest:"Family" },
+    { name:"Bua Ji — Anita Desai", attending:"maybe", count:2, events:["pheras","reception"], food:"veg",    note:"Train ticket confirm hote hi pakka batayengi.", ts:"2026-11-20T08:30:00", guest:"Family" },
+    { name:"Rahul Sharma (Office Dost)", attending:"yes", count:2, events:["sangeet","pheras","reception"], food:"nonveg", note:"Sangeet mein dance performance bhi dega!", ts:"2026-11-20T21:15:00", guest:"Friend" },
+    { name:"Priya Singh (College Friend)", attending:"yes", count:1, events:["mehendi","sangeet","reception"], food:"veg",    note:"Mehendi ke liye jaldi aayegi.", ts:"2026-11-21T11:02:00", guest:"Friend" },
+    { name:"Gupta Parivar", attending:"yes", count:6, events:["pheras","reception"], food:"veg",    note:"Bade-buzurg bhi aayenge, baithne ki vyavastha dekhna.", ts:"2026-11-21T16:47:00", guest:"Family" },
+    { name:"Mehta Family", attending:"no", count:0, events:[], food:"veg",    note:"Us hafte sheher se bahar hain — shubhkamnayein bheji hain.", ts:"2026-11-22T10:19:00", guest:"Family" },
+    { name:"Khan Family", attending:"yes", count:3, events:["sangeet","pheras","reception"], food:"nonveg", note:"", ts:"2026-11-22T19:33:00", guest:"Family" },
+    { name:"Iyer Parivar", attending:"maybe", count:4, events:["reception"], food:"veg",    note:"Reception ka pakka hai, baaki confirm karenge.", ts:"2026-11-23T09:08:00", guest:"Family" },
+    { name:"Neha & Office Team", attending:"yes", count:3, events:["sangeet","reception"], food:"nonveg", note:"Teen dost saath aayenge.", ts:"2026-11-23T14:26:00", guest:"Friend" },
+    { name:"Tau Ji — Mohan Sharma", attending:"yes", count:2, events:["haldi","pheras"], food:"jain",    note:"Sirf Haldi aur Pheras mein aayenge.", ts:"2026-11-23T17:54:00", guest:"Family" },
+    { name:"Yadav Parivar", attending:"no", count:0, events:[], food:"veg",    note:"Ghar mein chhota baccha hai, aana mushkil hai.", ts:"2026-11-24T08:45:00", guest:"Family" }
+  ];
+
+  /* ---------- Load live RSVPs (invite page writes these) ---------- */
+  function loadLive(){
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch(e){ return []; }
+  }
+
+  function normalize(r, source){
+    var count = Number(r && r.count);
+    if (!isFinite(count) || count < 0) count = 0;
+    return {
+      name: (r && r.name) ? String(r.name) : "—",
+      attending: (r && (r.attending === "yes" || r.attending === "no" || r.attending === "maybe")) ? r.attending : "maybe",
+      count: count,
+      events: (r && Array.isArray(r.events)) ? r.events.filter(function(id){ return EVENTS[id]; }) : [],
+      food: (r && (r.food === "veg" || r.food === "nonveg" || r.food === "jain")) ? r.food : "veg",
+      note: (r && r.note) ? String(r.note) : "",
+      ts: (r && r.ts) ? r.ts : "",
+      guest: (r && r.guest) ? String(r.guest) : "",
+      source: source
+    };
+  }
+
+  function getAll(){
+    var seed = SEED.map(function(r){ return normalize(r, "Sample"); });
+    var live = loadLive().map(function(r){ return normalize(r, "Live"); });
+    var all = seed.concat(live);
+    all.sort(function(a,b){
+      var ta = a.ts ? new Date(a.ts).getTime() : 0;
+      var tb = b.ts ? new Date(b.ts).getTime() : 0;
+      return tb - ta; /* newest first */
+    });
+    return all;
+  }
+
+  /* ---------- Helpers ---------- */
+  function esc(s){
+    return String(s == null ? "" : s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+  function fmtDate(ts){
+    if (!ts) return "—";
+    var d = new Date(ts);
+    if (isNaN(d.getTime())) return "—";
+    return d.toLocaleDateString("en-IN",{ day:"numeric", month:"short", year:"numeric" }) +
+           ", " + d.toLocaleTimeString("en-IN",{ hour:"numeric", minute:"2-digit", hour12:true });
+  }
+  function statusInfo(a){
+    if (a === "yes")   return { label:"Aayenge",      cls:"pill-yes"   };
+    if (a === "no")    return { label:"Nahi Aayenge", cls:"pill-no"    };
+    return               { label:"Maybe",            cls:"pill-maybe" };
+  }
+  function foodLabel(f){
+    if (f === "nonveg") return "Non-Veg";
+    if (f === "jain")   return "Jain";
+    return "Veg";
+  }
+
+  /* ---------- Render ---------- */
+  var allEntries = [];
+
+  function render(){
+    allEntries = getAll();
+
+    /* Stats */
+    var total = allEntries.length;
+    var coming = 0, maybeGuests = 0, maybeResp = 0, noResp = 0;
+    allEntries.forEach(function(r){
+      if (r.attending === "yes") coming += r.count;
+      else if (r.attending === "maybe"){ maybeGuests += r.count; maybeResp++; }
+      else if (r.attending === "no") noResp++;
+    });
+    document.getElementById("stTotal").textContent = total;
+    document.getElementById("stComing").textContent = coming;
+    document.getElementById("stMaybe").textContent = maybeGuests;
+    document.getElementById("stMaybeSub").textContent = maybeResp + " jawab • " + maybeGuests + " log ho sakte hain";
+    document.getElementById("stNo").textContent = noResp;
+
+    /* Function-wise (attending = yes only, count-weighted) */
+    var fnCounts = {};
+    EVENT_ORDER.forEach(function(id){ fnCounts[id] = 0; });
+    allEntries.forEach(function(r){
+      if (r.attending !== "yes") return;
+      r.events.forEach(function(id){ if (fnCounts[id] != null) fnCounts[id] += r.count; });
+    });
+    var maxFn = Math.max.apply(null, EVENT_ORDER.map(function(id){ return fnCounts[id]; }).concat([1]));
+    document.getElementById("fnList").innerHTML = EVENT_ORDER.map(function(id){
+      var ev = EVENTS[id], n = fnCounts[id];
+      var pct = Math.round((n / maxFn) * 100);
+      return '<div class="fn"><div class="fname">' + esc(ev.name) + '</div>' +
+             '<div class="fwhen">' + esc(ev.when) + '</div>' +
+             '<div class="fnum">' + n + '</div><div class="flbl">log aayenge</div>' +
+             '<div class="bar"><i style="width:' + pct + '%"></i></div></div>';
+    }).join("");
+
+    /* Food (attending = yes only, count-weighted) */
+    var food = { veg:0, nonveg:0, jain:0 };
+    allEntries.forEach(function(r){
+      if (r.attending === "yes" && food[r.food] != null) food[r.food] += r.count;
+    });
+    document.getElementById("foodVeg").textContent = food.veg;
+    document.getElementById("foodNonveg").textContent = food.nonveg;
+    document.getElementById("foodJain").textContent = food.jain;
+
+    renderTable(document.getElementById("searchBox").value || "");
+  }
+
+  function renderTable(query){
+    var q = String(query || "").trim().toLowerCase();
+    var rows = allEntries.filter(function(r){ return !q || r.name.toLowerCase().indexOf(q) !== -1; });
+    var body = document.getElementById("guestBody");
+    document.getElementById("emptyMsg").style.display = rows.length ? "none" : "block";
+    body.innerHTML = rows.map(function(r){
+      var st = statusInfo(r.attending);
+      var badge = r.source === "Sample"
+        ? '<span class="badge badge-sample">Sample</span>'
+        : '<span class="badge badge-live">Live</span>';
+      var fns = r.events.length
+        ? r.events.map(function(id){ return EVENTS[id].short; }).join(", ")
+        : "—";
+      return "<tr>" +
+        '<td><span class="gname">' + esc(r.name) + "</span>" + badge + "</td>" +
+        '<td><span class="pill ' + st.cls + '">' + st.label + "</span></td>" +
+        "<td>" + (r.attending === "no" ? "—" : r.count) + "</td>" +
+        '<td class="fn-tags">' + esc(fns) + "</td>" +
+        "<td>" + foodLabel(r.food) + "</td>" +
+        '<td class="note-cell">' + (r.note ? esc(r.note) : "—") + "</td>" +
+        "<td>" + esc(fmtDate(r.ts)) + "</td>" +
+        "</tr>";
+    }).join("");
+  }
+
+  /* ---------- CSV Export ---------- */
+  function csvCell(v){
+    var s = String(v == null ? "" : v);
+    if (/[",\n]/.test(s)) s = '"' + s.replace(/"/g,'""') + '"';
+    return s;
+  }
+  function exportCSV(){
+    var header = ["Name","Attending","Guests","Functions","Food","Note","Source","Date"];
+    var lines = [header.join(",")];
+    allEntries.forEach(function(r){
+      var att = r.attending === "yes" ? "Yes" : (r.attending === "no" ? "No" : "Maybe");
+      var fns = r.events.map(function(id){ return EVENTS[id].name; }).join("; ");
+      lines.push([
+        csvCell(r.name), csvCell(att), csvCell(r.attending === "no" ? 0 : r.count),
+        csvCell(fns), csvCell(foodLabel(r.food)), csvCell(r.note),
+        csvCell(r.source), csvCell(fmtDate(r.ts))
+      ].join(","));
+    });
+    var blob = new Blob(["\ufeff" + lines.join("\r\n")], { type:"text/csv;charset=utf-8;" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "sumit-nidhi-rsvps.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 500);
+  }
+
+  /* ---------- Clear test RSVPs ---------- */
+  function clearTest(){
+    var liveCount = loadLive().length;
+    if (liveCount === 0) {
+      showToast("Abhi koi test / live RSVP nahi hai — sirf sample data dikh raha hai.");
+      return;
+    }
+    var ok = window.confirm("Pakka? Aapke " + liveCount + " test RSVP (is browser ke localStorage wale) delete ho jayenge. Sample data waise hi rahega.");
+    if (!ok) return;
+    try { localStorage.removeItem(LS_KEY); } catch(e){}
+    render();
+    showToast("Test RSVP saaf ho gaye. Sample data ab bhi dikh raha hai.");
+  }
+
+  var toastTimer = null;
+  function showToast(msg){
+    var t = document.getElementById("toast");
+    t.textContent = msg;
+    t.style.display = "block";
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.style.display = "none"; }, 4000);
+  }
+
+  /* ---------- Wire up ---------- */
+  document.getElementById("searchBox").addEventListener("input", function(e){ renderTable(e.target.value); });
+  document.getElementById("csvBtn").addEventListener("click", exportCSV);
+  document.getElementById("clearBtn").addEventListener("click", clearTest);
+  window.addEventListener("storage", function(e){ if (e.key === LS_KEY) render(); });
+
+  render();
+})();
+</script>
+</body>
+</html>
